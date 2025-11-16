@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title><b>Dashboard</b></title>
+        <link rel="stylesheet" href="assets/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+
+        <header>
+            <button id="darkToggle">Dark Mode</button>
+
+            <div class="header-title">
+                <h2>Dashboard</h2>
+            </div>
+
+            <p class="subtitle"><b>Real-time sentiment and mention analytics</b></p>
+        </header>
+
+        <section class="metrics-section">
+
+            <div class="metric-card positive">
+                <h3>Positive</h3>
+                <span id="positiveCount">0</span>
+            </div>
+            <div class="metric-card negative">
+                <h3>Negative</h3>
+                <span id="negativeCount">0</span>
+            </div>
+            <div class="metric-card neutral">
+                <h3>Neutral</h3>
+                <span id="neutralCount">0</span>
+            </div>
+        </section>
+
+        <section class="chart-card">
+            <h3>Sentiment Distribution</h3>
+            <canvas id="sentimentChart"></canvas>
+        </section>
+
+        <section class="chart-card">
+            <h3>Mentions Over Time</h3>
+            <canvas id="trendChart"></canvas>
+        </section>
+
+
+        <section class="spike-card">
+            <h3>Spike Alerts</h3>
+            <div id="spikeList"></div>
+        </section>
+
+        <section class="mentions-card">
+
+            <h3>All Mentions</h3>
+                <div class="filter-bar">
+
+                    <select id="sentimentFilter">
+                        <option value="all">All</option>
+                        <option value="positive">Positive</option>
+                        <option value="negative">Negative</option>
+                        <option value="neutral">Neutral</option>
+                    </select>
+
+                    <input type="text" id="searchBox" placeholder="Search mentions...">
+
+                    <input type="date" id="fromDate">
+                    <input type="date" id="toDate">
+
+                    <button id="exportCSV">Export CSV</button>
+                    <button id="importCSV">Upload CSV</button>
+
+                    <input type="file" id="csvFile" accept=".csv" hidden>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Platform</th>
+                            <th>Content</th>
+                            <th>Sentiment</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mentionsBody"></tbody>
+                </table>
+                <div id="pagination" class="pagination"></div>
+
+        </section>
+        <script src="assets/dashboard.js"></script>
+    </body>
+</html>

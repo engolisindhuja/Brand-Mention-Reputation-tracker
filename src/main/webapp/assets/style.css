@@ -1,0 +1,252 @@
+
+:root {
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text: #212529;
+    --positive: #28a745;
+    --negative: #dc3545;
+    --neutral: #6c757d;
+    --shadow: rgba(0, 0, 0, 0.08);
+
+    --bg-dark: #1e1e1e;
+    --card-dark: #2c2c2c;
+    --text-dark: #f1f1f1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s ease;
+}
+
+body.dark-mode {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+body.dark-mode .metric-card,
+body.dark-mode .chart-card,
+body.dark-mode .spike-card,
+body.dark-mode .mentions-card {
+    background: var(--card-dark);
+    color: var(--text-dark);
+}
+
+header {
+    padding: 20px 40px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header h2 {
+    margin: 0;
+}
+
+.subtitle {
+    margin: 0;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+#darkToggle {
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: #157347;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+#darkToggle:hover {
+    background: #0e5c36;
+}
+
+.metrics-section {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 900px;
+    flex-wrap: wrap;
+}
+
+.metric-card {
+    width: 30%;
+    min-width: 200px;
+    padding: 20px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    box-shadow: 0 4px 12px var(--shadow);
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px var(--shadow);
+}
+
+.metric-card h3 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.metric-card span {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.metric-card.positive span {
+    color: var(--positive);
+}
+.metric-card.negative span {
+    color: var(--negative);
+}
+.metric-card.neutral span {
+    color: var(--neutral);
+}
+
+.chart-card {
+    width: 85%;
+    margin: 20px auto;
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px var(--shadow);
+    text-align: center;
+}
+
+#sentimentChart,
+#trendChart {
+    max-width: 420px;
+    height: 320px !important;
+    margin: 0 auto;
+}
+
+.spike-card {
+    width: 85%;
+    margin: 20px auto;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.spike-box {
+    padding: 12px;
+    margin-top: 10px;
+    background: #fff3cd;
+    border-left: 4px solid #856404;
+    border-radius: 8px;
+}
+
+.mentions-card {
+    width: 90%;
+    margin: 20px auto;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #e9ecef;
+}
+
+thead th {
+    padding: 12px;
+}
+
+tbody tr td {
+    padding: 12px;
+}
+
+tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+body.dark-mode tbody tr:nth-child(even) {
+    background: #3a3a3a;
+}
+
+.badge {
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    color: white;
+}
+
+.badge-positive {
+    background: var(--positive);
+}
+.badge-negative {
+    background: var(--negative);
+}
+.badge-neutral {
+    background: var(--neutral);
+}
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-bar input,
+.filter-bar select,
+.filter-bar button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.filter-bar button {
+    background: #157347;
+    color: white;
+    cursor: pointer;
+}
+
+.filter-bar button:hover {
+    background: #0e5c36;
+}
+
+.pagination {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    margin: 2px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background: #157347;
+    color: white;
+}
+
