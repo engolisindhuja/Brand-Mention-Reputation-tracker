@@ -48,9 +48,8 @@ Tools & Build
 | sentiment | VARCHAR(15) | positive / negative / neutral   |
 | posted_on | DATE        | Mention date                    |
 
-Demo Video
+Demo Video  
+Click the link below to watch the full demo:
+[Watch Demo Video](https://github.com/engolisindhuja/Brand-Mention-Reputation-tracker/raw/main/Brand%20Mention%20and%20Reputation%20Tracker%20Overview.mp4)
 
-Click the link below to watch the full demo of the Brand Mention & Reputation Tracker:
-
-[Watch Demo Video](Brand%20Mention%20and%20Reputation%20Tracker%20Overview.mp4)**
 
